@@ -1,0 +1,15 @@
+package Taxi
+
+
+object Main extends App {
+		val model= new TaxiModel(8,2);
+		model.getFields.foreach(i => i.foreach(j => println(j.toString())));
+		val fields = model.getFields().toString();
+		//println(fields(0)(4).toString());
+		val controller= new TaxiControl(model);
+		val gui = new SwingMain(controller);
+		
+		
+		new TaxiTextUi(controller);
+		
+}

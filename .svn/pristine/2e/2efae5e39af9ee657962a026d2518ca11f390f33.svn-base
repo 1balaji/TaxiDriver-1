@@ -1,0 +1,6 @@
+<TaxiModelSpec-stats timestamp="1358342236240"><stats expectations="3" examples="3" successes="3" time="254"></stats></TaxiModelSpec-stats>
+<TaxiModelSpec-results timestamp="1358342345323"><result location="TaxiModelSpec (TaxiModelSpec.scala:19)" id="32254338"><stats expectations="1" examples="1" failures="1" time="23"></stats></result>
+</TaxiModelSpec-results>
+<TaxiModelSpec-stats timestamp="1358342345348"><stats expectations="3" successes="2" examples="3" failures="1" time="220"><trend><stats failures="1" successes="-1" time="220"></stats></trend></stats></TaxiModelSpec-stats>
+<TaxiModelSpec-stats timestamp="1358344312987"><stats expectations="4" examples="4" successes="4" time="851"><trend><stats expectations="1" successes="2" examples="1" failures="-1" time="851"></stats></trend></stats></TaxiModelSpec-stats>
+<TaxiModelSpec-stats timestamp="1358344475362"><stats expectations="4" examples="4" successes="4" time="365"></stats></TaxiModelSpec-stats>

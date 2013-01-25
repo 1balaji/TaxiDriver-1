@@ -1,0 +1,95 @@
+table {
+	border:0px;
+	background-color:darkgreen;
+}
+
+.gamecell {
+	position:relative;
+	left:0px; 
+	top:0px; 
+	width:60px; 
+	height:60px;
+}
+
+.taxi {
+	
+	position:absolute;
+	left:0px; 
+	top:0px; 
+	width:60px; 
+	height:60px;
+}
+
+.start {
+	
+	position:absolute;
+	left:0px; 
+	top:0px; 
+	width:60px; 
+	height:60px;
+}
+
+.end {
+	
+	position:absolute;
+	left:0px; 
+	top:0px; 
+	width:60px; 
+	height:60px;
+}
+
+.guest {
+	
+	position:absolute;
+	left:20px; 
+	top:20px; 
+	width:40px; 
+	height:40px;
+}
+
+#game {
+	background-color:white;
+	float:left;
+	border:0px;
+}
+
+#control {
+	left;
+	min-width:200px;
+	padding:100px;
+	margin:20px;
+}
+
+#results {
+	float:left;
+	padding:10px;
+	margin:10px;
+	background-color:green;
+}
+
+#resultdist {
+	min-width:150px;
+	float:right;
+	color:white;
+}
+#resultearn {
+	min-width:150px;
+	float:right;
+	color:white;
+}
+#resultinfo {
+	min-width:200px;
+	color:red;
+	font-weight:bold;
+	float:right;
+}
+
+#run {
+	position:relative;
+	padding:10px;
+}
+
+#new {
+	position:relative;
+	padding:10px;
+}

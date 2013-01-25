@@ -1,0 +1,84 @@
+
+package views.html
+
+import play.templates._
+import play.templates.TemplateMagic._
+
+import play.api.templates._
+import play.api.templates.PlayMagic._
+import models._
+import controllers._
+import play.api.i18n._
+import play.api.mvc._
+import play.api.data._
+import views.html._
+/**/
+object index extends BaseScalaTemplate[play.api.templates.Html,Format[play.api.templates.Html]](play.api.templates.HtmlFormat) with play.api.templates.Template2[String,Taxi.TaxiControl,play.api.templates.Html] {
+
+    /**/
+    def apply/*2.2*/(message: String, controller:Taxi.TaxiControl):play.api.templates.Html = {
+        _display_ {
+
+Seq[Any](format.raw/*2.48*/("""
+
+"""),_display_(Seq[Any](/*4.2*/main("Welcome to Play 2.0xx")/*4.31*/ {_display_(Seq[Any](format.raw/*4.33*/("""
+    
+    <div id="game">
+    
+    <h1>Hello</h1>
+    
+    <input type="hidden" id="session" value="session.getId()" />
+    <table clas="gametable">
+    """),_display_(Seq[Any](/*12.6*/for(y <- (-1) to (controller.getSize -1) ) yield /*12.48*/ {_display_(Seq[Any](format.raw/*12.50*/("""
+    <tr>
+    	"""),_display_(Seq[Any](/*14.7*/for(x <- (-1) to (controller.getSize -1)) yield /*14.48*/ {_display_(Seq[Any](format.raw/*14.50*/("""
+    	 """),_display_(Seq[Any](/*15.8*/if(x > (-1) && x < controller.getSize)/*15.46*/  {_display_(Seq[Any](format.raw/*15.49*/("""
+	          """),_display_(Seq[Any](/*16.13*/if(y > (-1) && y< controller.getSize)/*16.50*/ {_display_(Seq[Any](format.raw/*16.52*/("""
+	          	
+		    	<td>
+		    		
+		    		<div class="gamecell" onClick="updateImageField("""),_display_(Seq[Any](/*20.58*/x)),format.raw/*20.59*/(""","""),_display_(Seq[Any](/*20.61*/y)),format.raw/*20.62*/(""");"><img id="img"""),_display_(Seq[Any](/*20.79*/x)),_display_(Seq[Any](/*20.81*/y)),format.raw/*20.82*/(""""  src=""""),_display_(Seq[Any](/*20.91*/routes/*20.97*/.Assets.at("images/" + Application.getImageName(x,y)))),format.raw/*20.150*/("""" alt="bidl">
+			    		<div class="taxi" """),_display_(Seq[Any](/*21.29*/{if(controller.getField(x,y).isTaxi != true) "style='visibility:hidden'" })),format.raw/*21.103*/(""" ><img id="taxi"""),_display_(Seq[Any](/*21.119*/x)),_display_(Seq[Any](/*21.121*/y)),format.raw/*21.122*/("""" src=""""),_display_(Seq[Any](/*21.130*/routes/*21.136*/.Assets.at("images/taxi.png"))),format.raw/*21.165*/(""""></div>
+			    		<div class="start" """),_display_(Seq[Any](/*22.30*/{if(controller.getField(x,y).isStart != true) "style='visibility:hidden'" })),format.raw/*22.105*/(""" ><img id="start"""),_display_(Seq[Any](/*22.122*/x)),_display_(Seq[Any](/*22.124*/y)),format.raw/*22.125*/("""" src=""""),_display_(Seq[Any](/*22.133*/routes/*22.139*/.Assets.at("images/start.png"))),format.raw/*22.169*/(""""></div>
+			    		<div class="end" """),_display_(Seq[Any](/*23.28*/{if(controller.getField(x,y).isEnd != true) "style='visibility:hidden'" })),format.raw/*23.101*/(""" ><img id="end"""),_display_(Seq[Any](/*23.116*/x)),_display_(Seq[Any](/*23.118*/y)),format.raw/*23.119*/("""" src=""""),_display_(Seq[Any](/*23.127*/routes/*23.133*/.Assets.at("images/final.png"))),format.raw/*23.163*/(""""></div>
+			    		<div class="guest" """),_display_(Seq[Any](/*24.30*/{if(controller.getField(x,y).isGuest != true) "style='visibility:hidden'" })),format.raw/*24.105*/(""" ><img id="guest"""),_display_(Seq[Any](/*24.122*/x)),_display_(Seq[Any](/*24.124*/y)),format.raw/*24.125*/("""" src=""""),_display_(Seq[Any](/*24.133*/routes/*24.139*/.Assets.at("images/guest.png"))),format.raw/*24.169*/(""""></div>
+		    		</div>
+		    	</td>
+		      """)))})),format.raw/*27.10*/("""
+		 """)))})),format.raw/*28.5*/("""
+    	""")))})),format.raw/*29.7*/("""
+    <tr>
+    """)))})),format.raw/*31.6*/("""
+    </table>
+    </div>
+    <div id="control">
+	    <div id="results">
+	    	Gefahrene Distanz:&nbsp;<div id="resultdist"></div></br>
+	    	Lohn:&nbsp;<div id="resultearn"></div></br>
+	    	<div id="resultinfo">Sammel alle G&auml;ste ein und bringe sie zum Ziel</div>
+	    </br>
+	    <img onClick="calculate()" id="run" src=""""),_display_(Seq[Any](/*40.48*/routes/*40.54*/.Assets.at("images/run.png"))),format.raw/*40.82*/("""" alt="Los gehts">
+	    <img onClick="newRound()" id="new" src=""""),_display_(Seq[Any](/*41.47*/routes/*41.53*/.Assets.at("images/new.png"))),format.raw/*41.81*/("""" alt="Neue Runde">
+	    </div>
+    </div>
+    
+""")))})))}
+    }
+    
+    def render(message:String,controller:Taxi.TaxiControl) = apply(message,controller)
+    
+    def f:((String,Taxi.TaxiControl) => play.api.templates.Html) = (message,controller) => apply(message,controller)
+    
+    def ref = this
+
+}
+                /*
+                    -- GENERATED --
+                    DATE: Wed Jan 16 01:32:53 CET 2013
+                    SOURCE: C:/Users/Phate/workspace/play/play-2.0.4/BadTaxiPlay/app/views/index.scala.html
+                    HASH: eb91e72a9070e73117aad16d8f4f93ba3b5f052e
+                    MATRIX: 522->2|645->48|682->51|719->80|758->82|947->236|1005->278|1045->280|1096->296|1153->337|1193->339|1236->347|1283->385|1324->388|1373->401|1419->438|1459->440|1587->532|1610->533|1648->535|1671->536|1724->553|1756->555|1779->556|1824->565|1839->571|1915->624|1993->666|2090->740|2143->756|2176->758|2200->759|2245->767|2261->773|2313->802|2387->840|2485->915|2539->932|2572->934|2596->935|2641->943|2657->949|2710->979|2782->1015|2878->1088|2930->1103|2963->1105|2987->1106|3032->1114|3048->1120|3101->1150|3175->1188|3273->1263|3327->1280|3360->1282|3384->1283|3429->1291|3445->1297|3498->1327|3576->1373|3612->1378|3650->1385|3696->1400|4059->1727|4074->1733|4124->1761|4225->1826|4240->1832|4290->1860
+                    LINES: 19->2|22->2|24->4|24->4|24->4|32->12|32->12|32->12|34->14|34->14|34->14|35->15|35->15|35->15|36->16|36->16|36->16|40->20|40->20|40->20|40->20|40->20|40->20|40->20|40->20|40->20|40->20|41->21|41->21|41->21|41->21|41->21|41->21|41->21|41->21|42->22|42->22|42->22|42->22|42->22|42->22|42->22|42->22|43->23|43->23|43->23|43->23|43->23|43->23|43->23|43->23|44->24|44->24|44->24|44->24|44->24|44->24|44->24|44->24|47->27|48->28|49->29|51->31|60->40|60->40|60->40|61->41|61->41|61->41
+                    -- GENERATED --
+                */
+            

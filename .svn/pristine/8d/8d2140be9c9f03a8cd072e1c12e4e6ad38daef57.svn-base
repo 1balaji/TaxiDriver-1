@@ -1,0 +1,131 @@
+// @SOURCE:C:/Users/Phate/workspace/play/play-2.0.4/BadTaxiPlay/conf/routes
+// @HASH:dbe436022d16360770c7fcc6e6100d18c1dfc0b7
+// @DATE:Wed Jan 09 15:18:08 CET 2013
+
+import play.core._
+import play.core.Router._
+import play.core.j._
+
+import play.api.mvc._
+
+
+import Router.queryString
+
+object Routes extends Router.Routes {
+
+
+// @LINE:6
+val controllers_Application_index0 = Route("GET", PathPattern(List(StaticPart("/"))))
+                    
+
+// @LINE:9
+val controllers_Assets_at1 = Route("GET", PathPattern(List(StaticPart("/assets/"),DynamicPart("file", """.+"""))))
+                    
+
+// @LINE:10
+val controllers_Application_updateField2 = Route("GET", PathPattern(List(StaticPart("/updateField/"),DynamicPart("x", """.+"""),StaticPart("/"),DynamicPart("y", """.+"""))))
+                    
+
+// @LINE:11
+val controllers_Application_getImage3 = Route("GET", PathPattern(List(StaticPart("/getImageName"))))
+                    
+
+// @LINE:12
+val controllers_Application_index4 = Route("GET", PathPattern(List(StaticPart("/newRound"))))
+                    
+
+// @LINE:13
+val controllers_Application_calculate5 = Route("GET", PathPattern(List(StaticPart("/calculate"))))
+                    
+
+// @LINE:14
+val controllers_Application_getDist6 = Route("GET", PathPattern(List(StaticPart("/getDist"))))
+                    
+
+// @LINE:15
+val controllers_Application_getEarnings7 = Route("GET", PathPattern(List(StaticPart("/getEarn"))))
+                    
+
+// @LINE:16
+val controllers_Application_getInfo8 = Route("GET", PathPattern(List(StaticPart("/getInfo"))))
+                    
+def documentation = List(("""GET""","""/""","""controllers.Application.index"""),("""GET""","""/assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)"""),("""GET""","""/updateField/$x<.+>/$y<.+>""","""controllers.Application.updateField(x:String, y:String)"""),("""GET""","""/getImageName""","""controllers.Application.getImage(x:String, y:String)"""),("""GET""","""/newRound""","""controllers.Application.index"""),("""GET""","""/calculate""","""controllers.Application.calculate"""),("""GET""","""/getDist""","""controllers.Application.getDist"""),("""GET""","""/getEarn""","""controllers.Application.getEarnings"""),("""GET""","""/getInfo""","""controllers.Application.getInfo"""))
+             
+    
+def routes:PartialFunction[RequestHeader,Handler] = {        
+
+// @LINE:6
+case controllers_Application_index0(params) => {
+   call { 
+        invokeHandler(_root_.controllers.Application.index, HandlerDef(this, "controllers.Application", "index", Nil))
+   }
+}
+                    
+
+// @LINE:9
+case controllers_Assets_at1(params) => {
+   call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
+        invokeHandler(_root_.controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String])))
+   }
+}
+                    
+
+// @LINE:10
+case controllers_Application_updateField2(params) => {
+   call(params.fromPath[String]("x", None), params.fromPath[String]("y", None)) { (x, y) =>
+        invokeHandler(_root_.controllers.Application.updateField(x, y), HandlerDef(this, "controllers.Application", "updateField", Seq(classOf[String], classOf[String])))
+   }
+}
+                    
+
+// @LINE:11
+case controllers_Application_getImage3(params) => {
+   call(params.fromQuery[String]("x", None), params.fromQuery[String]("y", None)) { (x, y) =>
+        invokeHandler(_root_.controllers.Application.getImage(x, y), HandlerDef(this, "controllers.Application", "getImage", Seq(classOf[String], classOf[String])))
+   }
+}
+                    
+
+// @LINE:12
+case controllers_Application_index4(params) => {
+   call { 
+        invokeHandler(_root_.controllers.Application.index, HandlerDef(this, "controllers.Application", "index", Nil))
+   }
+}
+                    
+
+// @LINE:13
+case controllers_Application_calculate5(params) => {
+   call { 
+        invokeHandler(_root_.controllers.Application.calculate, HandlerDef(this, "controllers.Application", "calculate", Nil))
+   }
+}
+                    
+
+// @LINE:14
+case controllers_Application_getDist6(params) => {
+   call { 
+        invokeHandler(_root_.controllers.Application.getDist, HandlerDef(this, "controllers.Application", "getDist", Nil))
+   }
+}
+                    
+
+// @LINE:15
+case controllers_Application_getEarnings7(params) => {
+   call { 
+        invokeHandler(_root_.controllers.Application.getEarnings, HandlerDef(this, "controllers.Application", "getEarnings", Nil))
+   }
+}
+                    
+
+// @LINE:16
+case controllers_Application_getInfo8(params) => {
+   call { 
+        invokeHandler(_root_.controllers.Application.getInfo, HandlerDef(this, "controllers.Application", "getInfo", Nil))
+   }
+}
+                    
+}
+    
+}
+                

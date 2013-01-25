@@ -1,0 +1,41 @@
+
+package views.html
+
+import play.templates._
+import play.templates.TemplateMagic._
+
+import play.api.templates._
+import play.api.templates.PlayMagic._
+import models._
+import controllers._
+import play.api.i18n._
+import play.api.mvc._
+import play.api.data._
+import views.html._
+/**/
+object hello extends BaseScalaTemplate[play.api.templates.Html,Format[play.api.templates.Html]](play.api.templates.HtmlFormat) with play.api.templates.Template1[String,play.api.templates.Html] {
+
+    /**/
+    def apply/*1.2*/(message: String):play.api.templates.Html = {
+        _display_ {
+
+Seq[Any]()}
+    }
+    
+    def render(message:String) = apply(message)
+    
+    def f:((String) => play.api.templates.Html) = (message) => apply(message)
+    
+    def ref = this
+
+}
+                /*
+                    -- GENERATED --
+                    DATE: Wed Jan 09 00:55:44 CET 2013
+                    SOURCE: C:/Users/Phate/workspace/play/play-2.0.4/BadTaxiPlay/app/views/hello.scala.html
+                    HASH: 642d66804b54a14e9b71f69c462d66fd815ca31c
+                    MATRIX: 505->1
+                    LINES: 19->1
+                    -- GENERATED --
+                */
+            

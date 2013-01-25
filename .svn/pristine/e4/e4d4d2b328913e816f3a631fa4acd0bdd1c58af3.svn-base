@@ -1,0 +1,340 @@
+// @SOURCE:C:/Users/Phate/workspace/play/play-2.0.4/BadTaxiPlay/conf/routes
+// @HASH:dbe436022d16360770c7fcc6e6100d18c1dfc0b7
+// @DATE:Wed Jan 09 15:18:08 CET 2013
+
+import play.core._
+import play.core.Router._
+import play.core.j._
+
+import play.api.mvc._
+
+
+import Router.queryString
+
+
+// @LINE:16
+// @LINE:15
+// @LINE:14
+// @LINE:13
+// @LINE:12
+// @LINE:11
+// @LINE:10
+// @LINE:9
+// @LINE:6
+package controllers {
+
+// @LINE:16
+// @LINE:15
+// @LINE:14
+// @LINE:13
+// @LINE:12
+// @LINE:11
+// @LINE:10
+// @LINE:6
+class ReverseApplication {
+    
+
+
+ 
+// @LINE:11
+def getImage(x:String, y:String) = {
+   Call("GET", "/getImageName" + queryString(List(Some(implicitly[QueryStringBindable[String]].unbind("x", x)), Some(implicitly[QueryStringBindable[String]].unbind("y", y)))))
+}
+                                                        
+ 
+// @LINE:14
+def getDist() = {
+   Call("GET", "/getDist")
+}
+                                                        
+ 
+// @LINE:10
+def updateField(x:String, y:String) = {
+   Call("GET", "/updateField/" + implicitly[PathBindable[String]].unbind("x", x) + "/" + implicitly[PathBindable[String]].unbind("y", y))
+}
+                                                        
+ 
+// @LINE:13
+def calculate() = {
+   Call("GET", "/calculate")
+}
+                                                        
+ 
+// @LINE:12
+// @LINE:6
+def index() = {
+   () match {
+// @LINE:6
+case () if true => Call("GET", "/")
+                                                                
+// @LINE:12
+case () if true => Call("GET", "/newRound")
+                                                                    
+   }
+}
+                                                        
+ 
+// @LINE:16
+def getInfo() = {
+   Call("GET", "/getInfo")
+}
+                                                        
+ 
+// @LINE:15
+def getEarnings() = {
+   Call("GET", "/getEarn")
+}
+                                                        
+
+                      
+    
+}
+                            
+
+// @LINE:9
+class ReverseAssets {
+    
+
+
+ 
+// @LINE:9
+def at(file:String) = {
+   Call("GET", "/assets/" + implicitly[PathBindable[String]].unbind("file", file))
+}
+                                                        
+
+                      
+    
+}
+                            
+}
+                    
+
+
+// @LINE:16
+// @LINE:15
+// @LINE:14
+// @LINE:13
+// @LINE:12
+// @LINE:11
+// @LINE:10
+// @LINE:9
+// @LINE:6
+package controllers.javascript {
+
+// @LINE:16
+// @LINE:15
+// @LINE:14
+// @LINE:13
+// @LINE:12
+// @LINE:11
+// @LINE:10
+// @LINE:6
+class ReverseApplication {
+    
+
+
+ 
+// @LINE:11
+def getImage = JavascriptReverseRoute(
+   "controllers.Application.getImage",
+   """
+      function(x,y) {
+      return _wA({method:"GET", url:"/getImageName" + _qS([(""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("x", x), (""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("y", y)])})
+      }
+   """
+)
+                                                        
+ 
+// @LINE:14
+def getDist = JavascriptReverseRoute(
+   "controllers.Application.getDist",
+   """
+      function() {
+      return _wA({method:"GET", url:"/getDist"})
+      }
+   """
+)
+                                                        
+ 
+// @LINE:10
+def updateField = JavascriptReverseRoute(
+   "controllers.Application.updateField",
+   """
+      function(x,y) {
+      return _wA({method:"GET", url:"/updateField/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("x", x) + "/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("y", y)})
+      }
+   """
+)
+                                                        
+ 
+// @LINE:13
+def calculate = JavascriptReverseRoute(
+   "controllers.Application.calculate",
+   """
+      function() {
+      return _wA({method:"GET", url:"/calculate"})
+      }
+   """
+)
+                                                        
+ 
+// @LINE:12
+// @LINE:6
+def index = JavascriptReverseRoute(
+   "controllers.Application.index",
+   """
+      function() {
+      if (true) {
+      return _wA({method:"GET", url:"/"})
+      }
+      if (true) {
+      return _wA({method:"GET", url:"/newRound"})
+      }
+      }
+   """
+)
+                                                        
+ 
+// @LINE:16
+def getInfo = JavascriptReverseRoute(
+   "controllers.Application.getInfo",
+   """
+      function() {
+      return _wA({method:"GET", url:"/getInfo"})
+      }
+   """
+)
+                                                        
+ 
+// @LINE:15
+def getEarnings = JavascriptReverseRoute(
+   "controllers.Application.getEarnings",
+   """
+      function() {
+      return _wA({method:"GET", url:"/getEarn"})
+      }
+   """
+)
+                                                        
+
+                      
+    
+}
+                            
+
+// @LINE:9
+class ReverseAssets {
+    
+
+
+ 
+// @LINE:9
+def at = JavascriptReverseRoute(
+   "controllers.Assets.at",
+   """
+      function(file) {
+      return _wA({method:"GET", url:"/assets/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("file", file)})
+      }
+   """
+)
+                                                        
+
+                      
+    
+}
+                            
+}
+                    
+
+
+// @LINE:16
+// @LINE:15
+// @LINE:14
+// @LINE:13
+// @LINE:12
+// @LINE:11
+// @LINE:10
+// @LINE:9
+// @LINE:6
+package controllers.ref {
+
+// @LINE:16
+// @LINE:15
+// @LINE:14
+// @LINE:13
+// @LINE:12
+// @LINE:11
+// @LINE:10
+// @LINE:6
+class ReverseApplication {
+    
+
+
+ 
+// @LINE:11
+def getImage(x:String, y:String) = new play.api.mvc.HandlerRef(
+   controllers.Application.getImage(x, y), HandlerDef(this, "controllers.Application", "getImage", Seq(classOf[String], classOf[String]))
+)
+                              
+ 
+// @LINE:14
+def getDist() = new play.api.mvc.HandlerRef(
+   controllers.Application.getDist(), HandlerDef(this, "controllers.Application", "getDist", Seq())
+)
+                              
+ 
+// @LINE:10
+def updateField(x:String, y:String) = new play.api.mvc.HandlerRef(
+   controllers.Application.updateField(x, y), HandlerDef(this, "controllers.Application", "updateField", Seq(classOf[String], classOf[String]))
+)
+                              
+ 
+// @LINE:13
+def calculate() = new play.api.mvc.HandlerRef(
+   controllers.Application.calculate(), HandlerDef(this, "controllers.Application", "calculate", Seq())
+)
+                              
+ 
+// @LINE:6
+def index() = new play.api.mvc.HandlerRef(
+   controllers.Application.index(), HandlerDef(this, "controllers.Application", "index", Seq())
+)
+                              
+ 
+// @LINE:16
+def getInfo() = new play.api.mvc.HandlerRef(
+   controllers.Application.getInfo(), HandlerDef(this, "controllers.Application", "getInfo", Seq())
+)
+                              
+ 
+// @LINE:15
+def getEarnings() = new play.api.mvc.HandlerRef(
+   controllers.Application.getEarnings(), HandlerDef(this, "controllers.Application", "getEarnings", Seq())
+)
+                              
+
+                      
+    
+}
+                            
+
+// @LINE:9
+class ReverseAssets {
+    
+
+
+ 
+// @LINE:9
+def at(path:String, file:String) = new play.api.mvc.HandlerRef(
+   controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]))
+)
+                              
+
+                      
+    
+}
+                            
+}
+                    
+                

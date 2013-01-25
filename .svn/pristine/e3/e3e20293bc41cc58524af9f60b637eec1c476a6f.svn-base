@@ -1,0 +1,13 @@
+[info] TaxiModelSpec
+[info] 
+[info] Create a new Model with size 1 and guests 1 should
+[info] + have value fieldsize = 1+2
+[info] + have value guests = 1
+[info] + arraysize must be 3
+[info] + have 1 guests defined in a streetelement
+[info]  
+[info]  
+[info] Total for specification TaxiModelSpec
+[info] Finished in 365 ms
+[info] 4 examples, 0 failure, 0 error
+[info] 

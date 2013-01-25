@@ -1,0 +1,45 @@
+
+@(message: String, controller:Taxi.TaxiControl)
+
+@main("Welcome to Play 2.0xx") {
+    
+    <div id="game">
+    
+    <h1>Hello</h1>
+    
+    <input type="hidden" id="session" value="session.getId()" />
+    <table clas="gametable">
+    @for(y <- (-1) to (controller.getSize -1) ) {
+    <tr>
+    	@for(x <- (-1) to (controller.getSize -1)) {
+    	 @if(x > (-1) && x < controller.getSize)  {
+	          @if(y > (-1) && y< controller.getSize) {
+	          	
+		    	<td>
+		    		
+		    		<div class="gamecell" onClick="updateImageField(@x,@y);"><img id="img@x@y"  src="@routes.Assets.at("images/" + Application.getImageName(x,y))" alt="bidl">
+			    		<div class="taxi" @{if(controller.getField(x,y).isTaxi != true) "style='visibility:hidden'" } ><img id="taxi@x@y" src="@routes.Assets.at("images/taxi.png")"></div>
+			    		<div class="start" @{if(controller.getField(x,y).isStart != true) "style='visibility:hidden'" } ><img id="start@x@y" src="@routes.Assets.at("images/start.png")"></div>
+			    		<div class="end" @{if(controller.getField(x,y).isEnd != true) "style='visibility:hidden'" } ><img id="end@x@y" src="@routes.Assets.at("images/final.png")"></div>
+			    		<div class="guest" @{if(controller.getField(x,y).isGuest != true) "style='visibility:hidden'" } ><img id="guest@x@y" src="@routes.Assets.at("images/guest.png")"></div>
+		    		</div>
+		    	</td>
+		      }
+		 }
+    	}
+    <tr>
+    }
+    </table>
+    </div>
+    <div id="control">
+	    <div id="results">
+	    	Gefahrene Distanz:&nbsp;<div id="resultdist"></div></br>
+	    	Lohn:&nbsp;<div id="resultearn"></div></br>
+	    	<div id="resultinfo">Sammel alle G&auml;ste ein und bringe sie zum Ziel</div>
+	    </br>
+	    <img onClick="calculate()" id="run" src="@routes.Assets.at("images/run.png")" alt="Los gehts">
+	    <img onClick="newRound()" id="new" src="@routes.Assets.at("images/new.png")" alt="Neue Runde">
+	    </div>
+    </div>
+    
+}

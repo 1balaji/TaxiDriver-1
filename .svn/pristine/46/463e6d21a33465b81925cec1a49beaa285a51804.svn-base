@@ -1,0 +1,12 @@
+[info] StreetElementSpec
+[info] 
+[info] A new StreetElement at not_zero position 1,1 with border should
+[info] + set X to 1
+[info] + set Y to 1
+[info] + have at least 1 tupel with 2 diggits > -1 for a street
+[info]  
+[info]  
+[info] Total for specification StreetElementSpec
+[info] Finished in 74 ms
+[info] 3 examples, 0 failure, 0 error
+[info] 
